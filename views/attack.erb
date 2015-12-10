@@ -1,8 +1,12 @@
 <% unless @game.death_occurred? %>
-<%= @player_1.name %> attacked <%= @player_2.name %>
+<h1><%= @player_1.name %> attacked <%= @player_2.name %></h1>
 <form action="/switch" method="post">
   <input type="submit" value="Back">
 </form>
 <% else %>
-<%= @player_2.name %> is DEAD
+<h1><%= @player_2.name %> is DEAD</h1>
+<div>
+<img src="https://pixabay.com/static/uploads/photo/2012/03/02/00/30/cat-20688_960_720.jpg" style="width:435px; height:360px">
+</div>
+Play again if you DARE!!!
 <% end %>
