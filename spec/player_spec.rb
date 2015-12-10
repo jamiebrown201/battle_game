@@ -16,6 +16,15 @@ describe Player do
     end
   end
 
+describe '#computer?' do
+  it 'by default, player is computerized' do
+    expect(mittens.computer?).to eq false
+  end
+  subject(:computer){Player.new('Computer', Player::DEFAULT_HP, true)}
+  it 'tells if player has been computerized' do
+    expect(computer.computer?).to eq true
+  end
+end
 
 
   describe '#receive_damage' do
