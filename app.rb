@@ -1,4 +1,5 @@
-require 'player'
+require './lib/player'
+require './lib/game'
 require 'sinatra/base'
 
 class Battle < Sinatra::Base
@@ -28,6 +29,11 @@ class Battle < Sinatra::Base
     @player_2 = $game.player_2
     $game.attack(@player_2)
     erb :attack
+  end
+
+  post '/switch' do
+    $game.switch
+    redirect '/play'
   end
 
 

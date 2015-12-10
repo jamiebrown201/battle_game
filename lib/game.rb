@@ -15,5 +15,7 @@ class Game
     @players.last
   end
 
-
+  def switch
+    @players.reverse! 
+  end
 end

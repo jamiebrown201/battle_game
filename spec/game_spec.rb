@@ -20,4 +20,14 @@ describe Game do
       expect(game.player_2).to eq mittens
     end
   end
+  describe '#switch' do
+    it 'player 1 has switched' do
+      game.switch
+      expect(game.player_1).to eq mittens
+    end
+    it 'player 2 has switched' do
+      game.switch
+      expect(game.player_2).to eq dave
+    end
+  end
 end
