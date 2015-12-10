@@ -8,7 +8,7 @@ class Player
   end
 
   def receive_damage
-    @hp -= 20
+    @hp -= Kernel.rand(60)
   end
 
 end

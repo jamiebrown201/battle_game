@@ -7,6 +7,7 @@ feature 'hit points' do
   end
   context 'when attacked' do
     before do
+      allow(Kernel).to receive(:rand).and_return(20)
       attack_cycle
     end
     scenario 'it reduces player 2 points' do

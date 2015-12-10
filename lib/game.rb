@@ -16,6 +16,17 @@ class Game
   end
 
   def switch
-    @players.reverse! 
+    @players.reverse!
   end
+
+  def death_occurred?
+    is_dead?(player_1) || is_dead?(player_2) ? true : false
+  end
+
+  private
+
+  def is_dead?(player)
+    player.hp <= 0
+  end
+
 end

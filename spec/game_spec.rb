@@ -30,4 +30,19 @@ describe Game do
       expect(game.player_2).to eq dave
     end
   end
+  describe '#death_occurred?' do
+    it 'is true when player 1 is dead' do
+      allow(dave).to receive(:hp).and_return(0)
+      expect(game.death_occurred?).to eq true
+    end
+    it 'is true when player 2 is dead' do
+      allow(dave).to receive(:hp).and_return(0)
+      expect(game.death_occurred?).to eq true
+    end
+    it 'is false when no player is dead' do
+      allow(dave).to receive(:hp).and_return(10)
+      allow(mittens).to receive(:hp).and_return(10)
+      expect(game.death_occurred?).to eq false
+    end
+  end
 end
